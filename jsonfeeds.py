@@ -82,7 +82,7 @@ class jsonfeedshandler(ihandler):
 		#mapping socket -> attackid
 		self.attacks = {}
 		'''
-		Beispiel Resultat:
+		example structure of self.attacks:
 		
 		self.attacks[icd]["type"] = 32
 		self.attacks[icd]["md5hash"] = "d41d8cd98f00b204e9800998ecf8427e"

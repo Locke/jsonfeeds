@@ -35,7 +35,7 @@ source config.sh
 
 echo "diff dionaea.conf and ihandlers.py with their backups"
 diff -u ${DIONAEA_ROOT}etc/dionaea/dionaea.conf.orig ${DIONAEA_ROOT}etc/dionaea/dionaea.conf > dionaea.conf.diff
-diff -u ${DIONAEA_ROOT}opt/dionaea/lib/dionaea/python/dionaea/ihandlers.py.orig ${DIONAEA_ROOT}lib/dionaea/python/dionaea/ihandlers.py > ihandlers.py.diff
+diff -u ${DIONAEA_ROOT}lib/dionaea/python/dionaea/ihandlers.py.orig ${DIONAEA_ROOT}lib/dionaea/python/dionaea/ihandlers.py > ihandlers.py.diff
 
 echo "copy jsonfeeds.py (and ssl folder if it exists)"
 cp ${DIONAEA_ROOT}lib/dionaea/python/dionaea/jsonfeeds.py .

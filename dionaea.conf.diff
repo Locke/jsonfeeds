@@ -36,12 +36,12 @@
  		}
  
 +		jsonfeeds = {
-+			//delete = "True" // remove malware files after download; default: false
-+			//verify = "True" // verify server ssl certificate; default: false
-+			externalIP = {
++			//delete = "True" // remove malware files after download; default: "False"
++			//verify = "True" // verify server ssl certificate; default: "False"
++			externalIP = { // jsonfeeds does not send local IP adresses, instead it looks up the own external IP / uses a configured IP
 +				// set either the number of seconds the fetched external ip is cached or set an custom external ip
 +				cachetime = "3600" // 1 hour = 3600 seconds
-+				// ip = "8.8.4.4"
++				//ip = "8.8.4.4"
 +			}
 +			// set either sensor.name and sensor.type or enable the client certificate
 +			//sensor = {

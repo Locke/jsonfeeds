@@ -70,6 +70,7 @@ class jsonfeedshandler(ihandler):
 		self.verify = g_dionaea.config()['modules']['python']['jsonfeeds'].get('verify', False) == "True"
 
 		self.externalIP = {
+			"disable": g_dionaea.config()['modules']['python']['jsonfeeds']['externalIP'].get('disable', False) == "True",
 			"cachetime": int(g_dionaea.config()['modules']['python']['jsonfeeds']['externalIP'].get('cachetime', 0)),
 			"lastcheck": 0,
 			"ip": g_dionaea.config()['modules']['python']['jsonfeeds']['externalIP'].get('ip', "")
@@ -114,7 +115,7 @@ class jsonfeedshandler(ihandler):
 			return False
 	
 	def translateLocalIP(self, ip):
-		if not jsonfeedshandler.isValidIP(ip):
+		if (not self.externalIP["disable"]) and (not jsonfeedshandler.isValidIP(ip)):
 			return self.getExternalIP()
 		else:
 			return ip

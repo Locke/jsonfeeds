@@ -31,14 +31,15 @@
 
 --- /opt/dionaea/etc/dionaea/dionaea.conf.orig	2013-07-31 00:52:41.000000000 +0100
 +++ /opt/dionaea/etc/dionaea/dionaea.conf	2013-09-23 13:59:04.883567981 +0100
-@@ -457,8 +457,34 @@
+@@ -457,8 +457,35 @@
  			offers = "var/dionaea/offers.f2b"
  		}
  
 +		jsonfeeds = {
 +			//delete = "True" // remove malware files after download; default: "False"
 +			//verify = "True" // verify server ssl certificate; default: "False"
-+			externalIP = { // jsonfeeds does not send local IP adresses, instead it looks up the own external IP / uses a configured IP
++			externalIP = { // if enabled, jsonfeeds does not send local IP adresses, instead it looks up the own external IP / uses a configured IP
++				//disable = "True" // default: "False"
 +				// set either the number of seconds the fetched external ip is cached or set an custom external ip
 +				cachetime = "3600" // 1 hour = 3600 seconds
 +				//ip = "8.8.4.4"

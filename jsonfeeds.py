@@ -45,7 +45,6 @@ logger.setLevel(logging.DEBUG)
 
 # derive from ihandler class
 class jsonfeedshandler(ihandler):
-	# TODO test requests
 
 	# constructor
 	def __init__(self, path):
@@ -68,7 +67,6 @@ class jsonfeedshandler(ihandler):
 
 		# delete malware file after download -> True
 		self.deleteFile = g_dionaea.config()['modules']['python']['jsonfeeds'].get('delete', False) == "True"
-		# TODO verify in config
 		self.verify = g_dionaea.config()['modules']['python']['jsonfeeds'].get('verify', False) == "True"
 
 		self.externalIP = {
@@ -283,7 +281,6 @@ class jsonfeedshandler(ihandler):
 		logger.debug("DL complete hash: %s" % icd.url)
 		self.set_md5hash(icd)
 		dch = "dl_hash: url: %s, md5hash: %s" % (icd.url, icd.md5hash)
-		# TODO: Der Typ sollte bereits gesetzt sein; beobachten ob es wirklich so ist
 		self.append_log(icd, dch)
 		# delete malware file
 		if self.deleteFile:
